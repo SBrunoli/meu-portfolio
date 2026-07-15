@@ -81,6 +81,8 @@ body::before {
     radial-gradient(50rem 36rem at 88% 30%, var(--glow-2), transparent 62%),
     radial-gradient(44rem 34rem at 30% 92%, var(--glow-3), transparent 60%);
   filter: blur(10px);
+  animation: aurora-drift 10s ease-in-out infinite alternate;
+  transition: opacity 0.4s var(--ease-out);
 }
 
 body::after {
@@ -92,4 +94,22 @@ body::after {
   pointer-events: none;
   mix-blend-mode: overlay;
   background-image: url("../public/noise.svg");
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2%, 2%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(2%, -3%, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
 }
