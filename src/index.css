@@ -69,6 +69,7 @@ body {
     color 0.4s var(--ease-out);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  padding-top: 6rem;
 }
 
 body::before {

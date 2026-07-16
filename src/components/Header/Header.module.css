@@ -1,6 +1,8 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   padding: 1.25rem 0;
   transition:
@@ -8,6 +10,13 @@
     background 0.3s var(--ease-out),
     border-color 0.3s var(--ease-out);
   border-bottom: 1px solid transparent;
+}
+
+.headerScrolled {
+  padding: 0.85rem 0;
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  backdrop-filter: blur(16px);
+  border-bottom-color: var(--color-border);
 }
 
 .header__inner {
