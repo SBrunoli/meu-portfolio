@@ -1,8 +1,27 @@
+import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
 function Header() {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = (): void => {
+      if (window.scrollY > 24) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}
+    >
       <div className={`container ${styles.header__inner}`}>
         {/* logo */}
         <a className={styles.header__logo} href="#top">
