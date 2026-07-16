@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
+import { useTheme } from "../../contexts/ThemeContext";
 
 function Header() {
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -49,8 +51,12 @@ function Header() {
         </nav>
 
         {/* Theme toggle */}
-        <button className={styles.header__themeBtn}>
-          <i className="fa-solid fa-sun"></i>
+        <button className={styles.header__themeBtn} onClick={toggleTheme}>
+          <i
+            className={
+              theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon"
+            }
+          ></i>
         </button>
       </div>
     </header>
