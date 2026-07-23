@@ -74,17 +74,17 @@ function Hero() {
           <span className={styles.accent__gradient}>funcionam de verdade.</span>
         </h1>
         {/* Hero description */}
-        <p className={`text-muted ${styles.hero__description}`}>
+        <p className={`text__muted ${styles.hero__description}`}>
           Curso Análise e Desenvolvimento de Sistemas e dedico boa parte do meu
           tempo estudando React, TypeScript e JavaScript. Esse portfólio é um
           projeto real, construído do zero por mim.
         </p>
 
         <div className={styles.hero__actions}>
-          <a href="#projects" className="btn btn-primary">
+          <a href="#projects" className="btn btn__primary">
             Ver projetos ↓
           </a>
-          <a href="#contact" className="btn btn-ghost">
+          <a href="#contact" className="btn btn__ghost">
             falar comigo
           </a>
           <div className={styles.hero__socials}>
