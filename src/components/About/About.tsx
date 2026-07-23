@@ -27,24 +27,24 @@ function About() {
           </div>
           {/* About Panel */}
           <div className={`glass__panel ${styles.about__panel}`}>
-            {/* Pannel Item Degree */}
+            {/* Panel Item Degree */}
             <div className={styles.panel__item}>
-              <span className={styles.panel__item__label}>Curso</span>
+              <span className={styles.panel__itemLabel}>Curso</span>
               <span>Análise e Desenvolvimento de Sistemas</span>
             </div>
-            {/* Pannel Item Current Focus */}
+            {/* Panel Item Current Focus */}
             <div className={styles.panel__item}>
-              <span className={styles.panel__item__label}>Foco atual</span>
+              <span className={styles.panel__itemLabel}>Foco atual</span>
               <span>React + TypeScript</span>
             </div>
-            {/* Pannel Item Looking For*/}
+            {/* Panel Item Looking For */}
             <div className={styles.panel__item}>
-              <span className={styles.panel__item__label}>Buscando</span>
+              <span className={styles.panel__itemLabel}>Buscando</span>
               <span>Vaga de estágio em dev front-end</span>
             </div>
-            {/* Pannel Item Version Control*/}
+            {/* Panel Item Version Control */}
             <div className={styles.panel__item}>
-              <span className={styles.panel__item__label}>Versionamento</span>
+              <span className={styles.panel__itemLabel}>Versionamento</span>
               <span>Git & GitHub no dia a dia</span>
             </div>
           </div>

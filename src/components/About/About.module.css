@@ -31,7 +31,7 @@
   border: none;
 }
 
-.panel__item__label {
+.panel__itemLabel {
   font-family: var(--font-code);
   text-transform: uppercase;
   letter-spacing: -0.02rem;
@@ -39,6 +39,7 @@
   color: var(--color-text-dim);
   margin-bottom: 0.2rem;
 }
+
 @media (max-width: 590px) {
   .about__inner {
     grid-template-columns: 1fr;

@@ -34,7 +34,7 @@ function Hero() {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [phraseIndex, displayText, isDeleting]);
+  }, [displayText, isDeleting, phraseIndex]);
 
   return (
     <section className={styles.hero} id="top">
@@ -43,25 +43,25 @@ function Hero() {
         {/* terminal */}
         <div className={`glass__panel ${styles.hero__terminal} `}>
           {/* terminal header */}
-          <div className={styles.hero__terminal__header}>
-            <span className={styles.hero__terminal__dot__marked}></span>
-            <span className={styles.hero__terminal__dot}></span>
-            <span className={styles.hero__terminal__dot}></span>
+          <div className={styles.hero__terminalHeader}>
+            <span className={styles.hero__terminalDotMarked}></span>
+            <span className={styles.hero__terminalDot}></span>
+            <span className={styles.hero__terminalDot}></span>
             <span>SBrunoli/meu-portfolio</span>
           </div>
           {/* terminal body*/}
-          <div className={styles.hero__terminal__body}>
+          <div className={styles.hero__terminalBody}>
             <p>
-              <span className={styles.hero__terminal__prompt}>$</span>
+              <span className={styles.hero__terminalPrompt}>$</span>
               whoami
             </p>
 
-            <p className={styles.hero__terminal__output}>
+            <p className={styles.hero__terminalOutput}>
               Bruno de Oliveira -{" "}
-              <span className={styles.hero__terminal__cursor__line}>
+              <span className={styles.hero__terminalCursorLine}>
                 {displayText}
               </span>
-              <span className={styles.hero__terminal__cursor}>▍</span>
+              <span className={styles.hero__terminalCursor}>▍</span>
             </p>
           </div>
         </div>
