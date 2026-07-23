@@ -39,3 +39,9 @@
   color: var(--color-text-dim);
   margin-bottom: 0.2rem;
 }
+@media (max-width: 590px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
