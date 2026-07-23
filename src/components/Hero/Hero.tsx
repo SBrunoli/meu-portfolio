@@ -1,6 +1,41 @@
+import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 
+const PHRASES = [
+  "estudante de ADS",
+  "em formação como dev front-end",
+  "buscando estágio",
+];
+
 function Hero() {
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = PHRASES[phraseIndex];
+    const typingSpeed = isDeleting ? 35 : 55;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentPhrase.length) {
+          setDisplayText(currentPhrase.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 1300);
+        }
+      } else {
+        if (displayText.length === 0) {
+          setIsDeleting(false);
+          setPhraseIndex((prev) => (prev + 1) % PHRASES.length);
+        } else {
+          setDisplayText(currentPhrase.slice(0, displayText.length - 1));
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [phraseIndex, displayText, isDeleting]);
+
   return (
     <section className={styles.hero} id="top">
       {/* container */}
@@ -24,7 +59,7 @@ function Hero() {
             <p className={styles.hero__terminal__output}>
               Bruno de Oliveira -{" "}
               <span className={styles.hero__terminal__cursor__line}>
-                estudante de ADS
+                {displayText}
               </span>
               <span className={styles.hero__terminal__cursor}>▍</span>
             </p>
@@ -42,7 +77,7 @@ function Hero() {
         <p className={`text-muted ${styles.hero__description}`}>
           Curso Análise e Desenvolvimento de Sistemas e dedico boa parte do meu
           tempo estudando React, TypeScript e JavaScript. Esse portfólio é um
-          projeto real, construído do zero por mim
+          projeto real, construído do zero por mim.
         </p>
 
         <div className={styles.hero__actions}>
@@ -61,7 +96,7 @@ function Hero() {
               Github
             </a>
             <a
-              href="www.linkedin.com/in/bruno-de-oliveira-profissional"
+              href="https://www.linkedin.com/in/bruno-de-oliveira-profissional"
               target="_blank"
               rel="noopener noreferrer"
             >
