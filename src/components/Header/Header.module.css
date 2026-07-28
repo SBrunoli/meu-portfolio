@@ -83,13 +83,21 @@
   .header__inner {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 0.75rem;
   }
 
   .header__logo {
     min-width: 0;
     line-height: 1.15;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header__themeBtn {
+    flex-shrink: 0;
   }
 
   .header__nav {
