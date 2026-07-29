@@ -2,7 +2,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
-import Stack from "./components/Stack/Stack";
+import Projects from "./projects/Projects";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <main>
           <Hero></Hero>
           <About />
-          <Stack />
+          <Skills />
+          <Projects />
         </main>
       </ThemeProvider>
     </>
