@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Stack.module.css";
+import styles from "./Skills.module.css";
 
 type PanelItem = {
   id: string;
@@ -38,7 +38,7 @@ const connections = [
   ["figma", "css"],
 ];
 
-function Stack() {
+function Skills() {
   const [active, setActive] = useState<string | null>(null);
 
   function getConnectedIds(id: typeof active) {
@@ -62,7 +62,7 @@ function Stack() {
   const highlighted = getConnectedIds(active);
 
   return (
-    <section className="section">
+    <section id="skills" className="section">
       {/* container */}
       <div className="container">
         {/* Eyebrow */}
@@ -133,4 +133,4 @@ function Stack() {
   );
 }
 
-export default Stack;
+export default Skills;
