@@ -42,7 +42,7 @@ function Header() {
           <a className={styles.header__link} href="#projects">
             projetos
           </a>
-          <a className={styles.header__link} href="#training">
+          <a className={styles.header__link} href="#journey">
             formação
           </a>
           <a className={styles.header__link} href="#contact">

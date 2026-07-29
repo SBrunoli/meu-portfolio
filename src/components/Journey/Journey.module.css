@@ -1,0 +1,87 @@
+.journey__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.journey__box {
+  width: 100%;
+  min-height: 9.375rem;
+
+  display: flex;
+  gap: var(--space-1);
+}
+
+.journey__markupCol {
+  width: 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey__marker {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  color: var(--amber);
+
+  flex-shrink: 0;
+}
+
+.journey__markupLine {
+  width: 2px;
+  flex: 1;
+  background-color: var(--color-border-hover);
+}
+
+.journey__box:last-child .journey__markupLine {
+  display: none;
+}
+
+.journey__infos {
+  width: 100%;
+  max-width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 1rem;
+}
+
+.journey__date {
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+}
+
+.journey__title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+}
+@media (max-width: 590px) {
+  .journey__box {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .journey__markupCol {
+    width: auto;
+    flex-direction: row;
+  }
+
+  .journey__markupLine {
+    display: none;
+  }
+
+  .journey__infos {
+    max-width: 100%;
+  }
+}
