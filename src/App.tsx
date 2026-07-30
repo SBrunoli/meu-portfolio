@@ -6,6 +6,7 @@ import Projects from "./components/projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Journey from "./components/Journey/Journey";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Journey />
           <Contact />
         </main>
+
+        <Footer />
       </ThemeProvider>
     </>
   );
