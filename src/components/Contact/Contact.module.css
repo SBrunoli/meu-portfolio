@@ -20,6 +20,7 @@
 }
 
 .contact__link {
+  width: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;
