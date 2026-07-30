@@ -1,6 +1,39 @@
+import { useState } from "react";
 import styles from "./Contact.module.css";
 
 function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mvzeyvjy", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("sent");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <section id="contact" className="section">
       <div className="container">
@@ -37,7 +70,7 @@ function Contact() {
                 rel="noopener noreferrer"
               >
                 <i className="fa-brands fa-github"></i>
-                https://github.com/SBrunoli
+                github.com/SBrunoli
               </a>
               <a
                 className={`text__muted ${styles.contact__link}`}
@@ -51,7 +84,10 @@ function Contact() {
             </div>
           </div>
 
-          <form action="#" className={`glass__panel ${styles.contact__form}`}>
+          <form
+            onSubmit={handleSubmit}
+            className={`glass__panel ${styles.contact__form}`}
+          >
             <label htmlFor="name" className={styles.contact__label}>
               Nome
             </label>
@@ -65,7 +101,7 @@ function Contact() {
             />
 
             <label htmlFor="email" className={styles.contact__label}>
-              email
+              Email
             </label>
             <input
               type="email"
@@ -88,9 +124,23 @@ function Contact() {
               className={styles.contact__input}
             ></textarea>
 
-            <button className="btn btn__primary" type="submit">
-              Enviar mensagem &rarr;
+            <button
+              className="btn btn__primary"
+              type="submit"
+              disabled={status === "sending"}
+              aria-live="polite"
+            >
+              {status === "sending" && "Enviando..."}
+              {status === "sent" && "Mensagem enviada com sucesso!"}
+              {(status === "idle" || status === "error") && (
+                <>Enviar mensagem &rarr;</>
+              )}
             </button>
+            {status === "error" && (
+              <p className={styles.contact__errorMsg} role="alert">
+                Algo deu errado. Tenta de novo, ou me chama direto por e-mail.
+              </p>
+            )}
           </form>
         </div>
       </div>

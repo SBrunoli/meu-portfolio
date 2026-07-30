@@ -62,6 +62,16 @@
   transition: border-color 0.25s var(--ease-out);
 }
 
+.contact__input:focus {
+  border-color: var(--teal);
+  outline: none;
+}
+
+.contact__errorMsg {
+  color: var(--amber);
+  font-size: 0.85rem;
+}
+
 @media (max-width: 590px) {
   .contact {
     grid-template-columns: 1fr;
