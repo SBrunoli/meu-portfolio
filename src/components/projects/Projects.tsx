@@ -11,12 +11,12 @@ type Project = {
 
 const infosProjects: Project[] = [
   {
-    title: "Reviva",
+    title: "Inacabados",
     description:
       "Plataforma pra adotar projetos abandonados de outras pessoas — continuando de onde a última pessoa parou. Tem busca, filtro por categoria, estatísticas calculadas em tempo real e uma barra de progresso customizada mostrando exatamente onde cada projeto travou.",
     stack: ["React", "TypeScript", "Vite", "CSS Modules"],
     repoUrl: "https://github.com/SBrunoli/Projeto-Inacabados",
-    image: "/projeto_reviva.png",
+    image: "/projeto_inacabados.png",
   },
   {
     title: "FocusFlow",
